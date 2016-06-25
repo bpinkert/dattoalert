@@ -1,1 +1,2 @@
-dattoconfig.xml
+dattoconfig.xml*
+*.pyc

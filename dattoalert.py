@@ -92,9 +92,9 @@ def email(subject, fromaddress, toaddress, smtphost):
     dailyemailhtml = "<html><head></head><body>"
     # loops through each device listed and generates the body of the email.
     for hosts in hostlist:
-        emailbodyhtlm = "<table border=\"10\" width=\"610\">\n"
+        emailbodyhtlm = "<table border=\"0\" width=\"600\">\n"
         emailbodyhtml = emailbodyhtlm + "<tr><td>" + hosts + ":</td></tr><tr></tr></td></tr><tr></tr></td></tr><tr></tr>\n"
-        emailbodyhtml = emailbodyhtml + "<tr><td width=\"35%\">Server Name</td><td width=\"35%\">Status</td><td width=\"35%\">Last Snapshot</td></tr>\n"
+        emailbodyhtml = emailbodyhtml + "<tr><td width=\"30%\">Server Name</td><td width=\"30%\">Status</td><td width=\"30%\">Last Snapshot</td></tr>\n"
         # loops through each server and generates the html for the email.
         for server in maindict[hosts]:
             emailbodyhtml = emailbodyhtml + "<tr><td>" + server[0] + "</td><td>" + server[1]+ "</td><td>" + server[2] + "</td></tr>\n"
@@ -104,7 +104,7 @@ def email(subject, fromaddress, toaddress, smtphost):
         dailyemailhtml = dailyemailhtml + emailbodyhtml + "\n\n"
 
     # add some CSS before closing the body
-    dailyemailhtml = dailyemailhtml + "<style type='text/css'> </style>"
+    #dailyemailhtml = dailyemailhtml + "<style type='text/css'> </style>"
 
     # closing tags for the email.
     dailyemailhtml = dailyemailhtml + "</body></html>"
